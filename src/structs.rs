@@ -13,3 +13,10 @@ pub struct Service {
     pub Tags: Vec<String>,
     pub Port: u32,
 }
+
+
+#[derive(RustcDecodable, RustcEncodable)]
+pub struct HealthService{
+    pub Node: Node,
+    pub Service: Service,
+}

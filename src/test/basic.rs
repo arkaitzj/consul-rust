@@ -1,8 +1,8 @@
 use std::collections::HashMap;
 use agent::Agent;
 use catalog::Catalog;
-use health::{Health, HealthService};
-use structs::Service;
+use health::Health;
+use structs::{Service, HealthService};
 use rustc_serialize::json;
 
 
