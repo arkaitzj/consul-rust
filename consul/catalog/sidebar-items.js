@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Catalog","Catalog can be used to query the Catalog endpoints"]]});

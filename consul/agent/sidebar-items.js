@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Agent","Agent can be used to query the Agent endpoints"],["AgentMember","AgentMember represents a cluster member known to the agent"]]});

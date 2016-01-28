@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Client","provides a client to the Consul API"]]});

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `consul` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, consul">
+
+    <title>consul - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'consul', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>consul</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-0' class='srclink' href='../src/consul/lib.rs.html#1-67' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Rust client libray for <a href="http://consul.io/">Consul</a> HTTP API</p>
+
+<h1 id='usage' class='section-header'><a href='#usage'>Usage</a></h1>
+<p>This crate is <a href="https://crates.io/crates/consul">on crates.io</a> and
+can be used by adding <code>consul</code> to the dependencies in your
+project&#39;s <code>Cargo.toml</code>.</p>
+
+<pre><code class="language-toml">[dependencies]
+consul = &quot;*&quot;
+</code></pre>
+
+<p>and this to your crate root:</p>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>extern</span> <span class='kw'>crate</span> <span class='ident'>consul</span>;</pre>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1><pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>collections</span>::<span class='ident'>HashMap</span>;
+<span class='kw'>use</span> <span class='ident'>consul</span>::{<span class='ident'>Client</span>, <span class='ident'>Service</span>};
+
+<span class='kw'>let</span> <span class='ident'>client</span> <span class='op'>=</span> <span class='ident'>Client</span>::<span class='ident'>new</span>(<span class='string'>&quot;127.0.0.1:8500&quot;</span>);
+<span class='kw'>let</span> <span class='ident'>services</span>: <span class='ident'>HashMap</span><span class='op'>&lt;</span><span class='ident'>String</span>, <span class='ident'>Service</span><span class='op'>&gt;</span> <span class='op'>=</span> <span class='ident'>client</span>.<span class='ident'>agent</span>.<span class='ident'>services</span>();
+<span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;{:?}&quot;</span>, <span class='ident'>services</span>);</pre>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Agent.html'
+                               title='consul::Agent'>Agent</a></td>
+                        <td class='docblock short'>
+                             <p>Agent can be used to query the Agent endpoints</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.AgentMember.html'
+                               title='consul::AgentMember'>AgentMember</a></td>
+                        <td class='docblock short'>
+                             <p>AgentMember represents a cluster member known to the agent</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Catalog.html'
+                               title='consul::Catalog'>Catalog</a></td>
+                        <td class='docblock short'>
+                             <p>Catalog can be used to query the Catalog endpoints</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Client.html'
+                               title='consul::Client'>Client</a></td>
+                        <td class='docblock short'>
+                             <p>provides a client to the Consul API</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Health.html'
+                               title='consul::Health'>Health</a></td>
+                        <td class='docblock short'>
+                             <p>Health can be used to query the Health endpoints</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.HealthService.html'
+                               title='consul::HealthService'>HealthService</a></td>
+                        <td class='docblock short'>
+                             <p>HealthService is used for the health service</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Keystore.html'
+                               title='consul::Keystore'>Keystore</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Node.html'
+                               title='consul::Node'>Node</a></td>
+                        <td class='docblock short'>
+                             <p>Node represents a node</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.RegisterService.html'
+                               title='consul::RegisterService'>RegisterService</a></td>
+                        <td class='docblock short'>
+                             <p>Service represents a service</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Service.html'
+                               title='consul::Service'>Service</a></td>
+                        <td class='docblock short'>
+                             <p>Service represents a service</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Session.html'
+                               title='consul::Session'>Session</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.TtlHealthCheck.html'
+                               title='consul::TtlHealthCheck'>TtlHealthCheck</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='fn' href='fn.get_string.html'
+                               title='consul::get_string'>get_string</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "consul";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
